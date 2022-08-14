@@ -1,0 +1,253 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* ------Main Container---------------- */
+.main-wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto 100px;
+}
+
+/* -------Header--------------- */
+
+.header-holder {
+  grid-column: 1 / -1;
+  height:400px;
+}
+
+.h-sub-header {
+  background-color: rgb(22, 21, 22);
+  height: 85%;
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 10px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: rgb(238, 58, 27) 5px 5px;
+}
+
+/* header left side (text)------------ */
+.h-left {
+  height: 100%;
+  width: 60%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+  padding-left: 10%;
+  padding-top: 40px;
+}
+
+.h-left h1{
+  height: 30%;
+  color: azure;
+  font-size: 2em;
+  white-space: nowrap;
+  animation: mycolor 1s infinite;
+  animation-direction: alternate;
+}
+
+
+@keyframes mycolor {
+  from {color: red;}
+  to {color: rgb(174, 171, 167);}
+}
+
+.h-left p{
+  color: azure;
+}
+
+/* header right side-------- */
+
+.h-right {
+  width: 40%;
+}
+
+.h-right img{
+margin: 0 10%;
+margin-left: 25%;
+}
+
+/* -----------SideBar----------------- */
+.sidebar {
+  grid-column: 1 / 4;
+}
+
+.menu-button-box {
+  background-color: rgb(197, 40, 40);
+  height: 200px;
+  min-width: 150px;
+  max-width: 250px;
+  border-radius: 7px;
+  margin-left: 20%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10%;
+}
+
+.header-button, .side-button, .tablet-button{
+  text-decoration: none;
+  background: rgb(238, 58, 27);
+  width: 85%;
+  height: 40px;
+  border-radius: 7px;
+  color: white;
+  font-weight: 900;
+  text-align: center;
+  font-family: 'Mukta', sans-serif;
+  white-space: nowrap;
+  padding-top: 5px;
+
+}
+.side-button{
+  background-color: rgb(253, 253, 253);
+  color: rgb(68, 63, 63);
+  border: rgb(39, 37, 37) solid 2px;
+  padding-top: 5px;
+
+}
+
+
+/* -----------Main Section------------ */
+.main-content {
+  height: 1100px;
+  /* background-color: pink; */
+  display: grid;
+  grid-column: 4 / -1;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.main-box{
+  max-width: 280px;
+  height: 300px;
+  border-radius: 7px;
+  box-shadow: 5px 5px 10px gray;
+  margin-top: 20px;
+}
+
+.main-box img{
+  max-width: 100%;
+}
+
+.main-box-button {
+  width: 80px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid rgb(120, 112, 112);
+  border-radius: 2px;
+  display: inline-block;
+  margin: 10px 30px;
+  padding: 3px;
+}
+
+.main-box-text{
+  margin: 5px 30px;
+}
+
+/* Tablet buttion */
+.tablet-button{
+  display: none;
+}
+
+/* ---------Footer--------------------- */
+.footer {
+  background-color: rgb(32, 33, 33);
+  grid-column: 1 / -1;
+  height: 200px;
+  margin-top: 10px;
+  color: rgb(137, 139, 141);
+  font-size: 2em;
+  font-style: italic;
+  text-align: center;
+  padding-top: 10px;
+  box-shadow: 0 -5px 20px rgb(126, 121, 121);
+}
+
+.social-link a{
+  text-decoration: none;
+  color: white;
+  font-size: medium;
+}
+
+/* -------------hover-------------------------- */
+
+.tablet-button:hover, .header-button:hover, .side-button:hover {
+  background-color: rgb(175, 175, 168);
+}
+
+.main-box-button:hover {
+  background-color: rgb(183, 183, 164);
+}
+
+
+
+/* ---------Media Query---for Tablet------------ */
+
+/* ----------for Tablet------------ */
+@media only screen and (max-width: 768px) {
+  .main-wrapper {
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .header-holder {
+    grid-column: 1 / -1;
+    height:90%;
+  }
+    .h-sub-header {
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .sidebar {
+    grid-column: 1 / -1;
+  }
+
+  .menu-button-box {
+    flex-direction: row;
+    height: 40px;
+    max-width: 850px;
+    margin: 0 auto;
+    column-gap: 10%;
+    border-radius: 0;
+  }
+
+  .side-button{
+    font-weight: 600;
+    background-color: rgb(221, 38, 38);
+    color: white;
+    height: 30px;
+    width: 150px;
+    padding-top: 0;
+  }
+
+  .main-content {
+    height: auto;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+   }
+
+   .main-box{
+    max-width: 280px;
+    /* min-width: 180px; */
+    max-height: 350px;
+    margin: 20px 20%;
+  }
+
+  /* Tablet buttion */
+  .tab-box{
+    display: none;
+  }
+  .tablet-button{
+    display: block;
+    width: 20vw;
+    margin: 0 80%;
+}
+
+
+}
